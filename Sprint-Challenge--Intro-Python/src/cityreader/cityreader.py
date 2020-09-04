@@ -41,9 +41,14 @@ def cityreader(cities=[]):
     cf = csv.reader(f)
     next(cf)
     for r in cf:
-      city = City(r[0], r[3], r[4])
-      cities.append(city)
+      name = r[0]
+      lat = float(r[3])
+      lon = float(r[4])
+      #city = City((name,lat,lon))
+      #cities.append(city)
+      cities.append(City(name, lat, lon))
 
+    return cities
 
 cityreader(cities)
 
